@@ -12,8 +12,11 @@ Ex:  hello(null) => null
 
 */
 
-function hello() {
-  // WRITE YOUR CODE UNDER THIS LINE  
+function hello(string) {
+   if(string ==="" || string===null  )
+   return null
+   else
+   return "hello "+string
 
 }
 
@@ -32,9 +35,15 @@ Ex: calculateTax(100,0.15)
 => "You got 100 JD from sales, you should pay 15 JD for tax and you will have 85 JD as net sales."
 */
 
-function calculateTax() {
-  // WRITE YOUR CODE UNDER THIS LINE 
-
+function calculateTax(number,tax) {
+   if(tax===0){
+     return number
+   }
+var result=0
+result=number*tax
+result=number-result
+return "you got"+number+" JD from sales, you should pay "+number*tax+" JD for tax and you will have  "
++ result +"  JD as net sales.";
 }
 
 
@@ -52,9 +61,17 @@ Ex: repeatChar("a",2); => "a, A"
 Ex: repeatChar("C",5); => "C, c, C, c, C"
 */
 
-function repeatChar() {
-  // WRITE YOUR CODE UNDER THIS LINE         
-
+function repeatChar(string,number) {
+    var output="";
+    while (number !==0) {
+      if (string.length<=1){
+      output=output+string.toUpperCase() +", "
+      }
+      else
+      output=output+string.toLowerCase() +", "
+      number--
+    }      
+return output;
 }
 
 
@@ -72,9 +89,10 @@ Ex: stringToCapital("Are you a student in coding ACADEMY by ORANGE ?")
 => "ARE YOU A STUDENT IN CODING ACADEMY BY ORANGE ?"
 */
 
-function stringToCapital() {
-  // WRITE YOUR CODE UNDER THIS LINE         
-
+function stringToCapital(string) {
+      if(string[string.length-1].toUpperCase <'a')
+      return string 
+   return stringToCapital(string.toUpperCase)
 }
 
 // Good luck :)
